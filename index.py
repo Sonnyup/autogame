@@ -26,12 +26,18 @@ def start():
                 if inputB == 1:
                     print('程序启动完毕！')
                     while True:
-                        yuhun.duizhang()
+                        try:
+                            yuhun.duizhang()
+                        except:
+                            pass
                     break
                 elif inputB == 2:
                     print('程序启动完毕！')
                     while True:
-                        yuhun.duiyuan()
+                        try:                            
+                            yuhun.duiyuan()
+                        except:
+                            pass
                     break
                 else:
                     print('输入错误，请重新选择！')
