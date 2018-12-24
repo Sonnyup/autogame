@@ -14,7 +14,7 @@ def windowList(targetTitle):
         clsname = win32gui.GetClassName(hwnd)
         title = win32gui.GetWindowText(hwnd)
         if (title.find(targetTitle) >= 0):    
-            print('%d.窗口名：%s,类名：%s' % (i,title,clsname))
+            print('%d.句柄：%d，窗口名：%s，类名：%s' % (i,hwnd,title,clsname))
             winDict[i] = (title,hwnd,clsname)
             i +=1
             
@@ -36,7 +36,6 @@ def windowList(targetTitle):
             
 print('开启本程序前，请先配置好出战队伍！')
 hwnd = windowList('阴阳师') #首次运行程序时加载
-
 
 image_data = '' #截屏数据
 #截图功能封装

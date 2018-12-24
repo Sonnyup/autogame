@@ -80,6 +80,6 @@ def _publicFun():
 
     fudanPos = fLocate(fudanFlag)#福蛋标识
     if fudanPos:
-        time.sleep(1)
+        # time.sleep(1)
         print('点击福蛋')
         fLeftClick((800 , 320) ,(100 ,100))
