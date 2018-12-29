@@ -14,16 +14,15 @@ def duizhang():
         # print(peopleNum)
         fightPos = fLocate(fightBtn)#开始战斗按钮
         invitePos = fLocateAll(inviteBtn) #邀请按钮--查找全部
-        if invitePos:
-            if peopleNum == 2:  #2人开队
-                if len(invitePos) == 1:
-                    fLeftClick(fightPos,(13,8))
-                    print("2人开始战斗")                  
-            elif peopleNum == 3:
-                if len(invitePos) == 0:
-                    fLeftClick(fightPos,(13,8))
-                    print("3人开始战斗")
-    
+        if peopleNum == 2:  #2人开队
+            if len(invitePos) == 1:
+                fLeftClick(fightPos,(13,8))
+                print("2人开始战斗")
+        elif peopleNum == 3:
+            if invitePos == None:
+                fLeftClick(fightPos,(13,8))
+                print("3人开始战斗")
+
     autoPos = fLocate(autoFlag)#自动邀请
     # print(autoPos)    
     if autoPos:

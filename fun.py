@@ -58,3 +58,7 @@ def fLocateAll(searchImage,confidence = 0.9):
 #点击鼠标左键封装
 def fLeftClick(position,offset=(0,0)):
     at.lClick(hwnd,position,offset)
+
+#拖动界面
+def fDragMouse(handle, start, end, t = 30, offset = (0,0)):
+    at.dragMouse(handle, start, end, t = 30, offset = (0,0))
