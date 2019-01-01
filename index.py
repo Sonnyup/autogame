@@ -1,5 +1,23 @@
 import yuhun
 import tansuo
+# import md5
+# from configs import configs
+
+# path = 'config.ini'
+# m = md5.get_file_md5(path)
+# conf = configs()
+# stype = conf.getOneConfigValue(('setting','type'))
+
+# def starts():
+    # global stype
+    # print(stype)
+    # if m != md5.get_file_md5(path):
+    #     conf = configs()
+    #     stype = conf.getOneConfigValue(('setting','type'))
+    # time.sleep(1)
+
+# while 1:
+#     starts()
 
 def start():
     while True:

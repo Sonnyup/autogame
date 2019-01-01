@@ -1,6 +1,8 @@
 '''
 配置文件
 '''
+import md5
+from configs import configs
 
 #分辨率：960x540
 #查找的图片
@@ -58,3 +60,10 @@ yaoFlag = 'image/yao.bmp'
 fbjmFlag = 'image/fbjm.bmp'
 #参数设置
 peopleNum = 3 #御魂觉醒 参战人数
+
+fileMd5 = md5.get_file_md5() #生成配置文件MD5
+conf = configs() #读取配置类
+publicConf = conf.getConfigDict('publicuse')#公用配置参数
+yhConf = conf.getConfigDict('yuhun') #御魂配置参数
+jxConf = conf.getConfigDict('juexing')#觉醒参数
+tsConf = conf.getConfigDict('tansuo')#探索参数
