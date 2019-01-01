@@ -26,7 +26,7 @@ t:拖动时长，根据需求自己定义。建议不低于20。100=1秒
 offset:偏移
 '''
 def dragMouse(handle, start, end, t = 30, offset = (0,0)):
-    print(start)
+    # print(start)
     sx = int(start[0]) + rands(0,offset[0])
     sy = int(start[1]) + rands(0,offset[1])
     ex = int(end[0]) + rands(0,offset[0])
