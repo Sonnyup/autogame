@@ -70,12 +70,12 @@ def _publicFun():
             time.sleep(0.5)
             fLeftClick((800 , 320) ,(100 ,100))
 
-    # failurePos = fLocate(failureFlag)#失败标识
-    # if failurePos:      
-    #     fair = fair + 1
-    #     print("战斗失败次数：%d" % fair)       
-    #     time.sleep(1)
-    #     fLeftClick((800 , 320) ,(100 ,100))
+    shibaiPos = fLocate(shibaiFlag)#失败标识
+    if shibaiPos:      
+        fair = fair + 1
+        print("战斗失败次数：%d" % fair)       
+        time.sleep(1)
+        fLeftClick((800 , 320) ,(100 ,100))
 
     fudanPos = fLocate(fudanFlag)#福蛋标识
     if fudanPos:

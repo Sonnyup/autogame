@@ -60,5 +60,5 @@ def fLeftClick(position,offset=(0,0)):
     at.lClick(hwnd,position,offset)
 
 #拖动界面
-def fDragMouse(handle, start, end, t = 30, offset = (0,0)):
-    at.dragMouse(handle, start, end, t = 30, offset = (0,0))
+def fDragMouse(start, end, t = 30, offset = (0,0)):
+    at.dragMouse(hwnd, start, end, t = 30, offset = (0,0))
