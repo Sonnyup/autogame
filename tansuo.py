@@ -11,7 +11,7 @@ def findexp():
     global boss #boss标识
     global fireNum
     
-    fScreenShot(0.5)
+    fScreenShot(0)
     # time.sleep(0.1)
 
     #经验怪标识
@@ -30,7 +30,7 @@ def findexp():
     
     if expPos:
         daoPos = fLocateAll(daoBtn,0.8)#战斗图标
-        print(daoPos)
+        # print(daoPos)
         expX = expPos[0]
         if daoPos != None:
             sortList = {} #排序所与需要的字典
@@ -59,11 +59,12 @@ def findexp():
 def danshua():
     global pullNum #拖动界面次数
     global boss #boss标识
-    fScreenShot(0.5)
+    # print("开始单刷")
+    fScreenShot(0)
     winPos = fLocate(tswin)
     if winPos:
         print("战斗胜利")
-        for i in range(2):                
+        for i in range(2):
             time.sleep(0.2)
             fLeftClick((800 , 320),(100 ,100))
 
@@ -85,10 +86,10 @@ def danshua():
             time.sleep(1)
             fLeftClick((800 , 320),(100 ,50))
             time.sleep(0.2)
-            fScreenShot(0.5)
+            fScreenShot(0)
             lipinPos = fLocate(lipinFlag)
         boss = False
-        pullNum = 7
+        pullNum = tsConf['pullnum']
         return True
 
     towSixPos = fLocate(towSixFlag)
@@ -107,14 +108,15 @@ def danshua():
         pullNum = 1
 
     fbPos = fLocate(fbjmFlag)
-    if fbPos and pullNum < 5:
+    if fbPos and pullNum < tsConf['pullnum']:
         print("进入副本界面")
         # time.sleep(1)    
-        for j in range(2):
+        for j in range(tsConf['findmonster']):
             print("查找怪物 %d 次"%(j+1))
             if findexp():
                 return True
-
+        # fLeftClick((800,400),(10,10))
+        # time.sleep(1.5)
         fDragMouse((900,300),(50,300),(100,50),25)#探索副本界面滑动
         print("拖动%d次" % pullNum)
         pullNum += 1
@@ -142,14 +144,17 @@ def danshua():
                 #x:120-330 y:320-460
             else:
                 fLeftClick((830,370),(60,60))
-                print("准备页面-点击准备")
+                print("准备页面1-点击准备")
+        else:
+            fLeftClick((830,370),(60,60))
+            print("准备页面2-点击准备")
 
-    fScreenShot(0.5)
+    fScreenShot(0)
     allPos = fLocate(allFlag)
     if allPos:
         fLeftClick(allPos,(5,5))
         time.sleep(0.2)
-        fScreenShot(0.5)
+        fScreenShot(0)
         nPos = fLocate(nFlag)
         if nPos:
             fLeftClick(nPos,(1,1))
@@ -157,7 +162,7 @@ def danshua():
             findman()#换狗粮
 
 def findman():
-    fScreenShot(0.5,True)
+    fScreenShot(0)
     manPos = fLocateAll(manFlag,0.8)
     if manPos :
         if len(manPos) > 1:
@@ -175,7 +180,7 @@ def findman():
             print("狗粮页面-点击准备2")
 
 def findGouliang():
-    fScreenShot(0.5)
+    fScreenShot(0)
     djPos = fLocateAll(dengjiFlag,0.7)
     if djPos and len(djPos) >= 2:
         djx = djPos[1][0] + 15
@@ -188,7 +193,7 @@ def findGouliang():
 
 #队员
 def duiyuan():
-    fScreenShot(0.5) #截图
+    fScreenShot(0) #截图
     _publicFun()#调用共用函数
 
     yaoqingPos = fLocate(yaoqingTip)
@@ -208,7 +213,7 @@ def duiyuan():
                 fLeftClick(fanhuiPos,(10,8))
                 print("点击退出")
                 for i in range(2):                    
-                    fScreenShot(0.5)
+                    fScreenShot(0)
                     qrPos = fLocate(qrBtn)
                     if qrPos:
                         fLeftClick(qrPos,(10,8))
@@ -246,9 +251,9 @@ def _publicFun():
         print('点击福蛋')
         fLeftClick((800 , 320) ,(100 ,100))
         
-# while True:
-#     try:
-#         start()
-#     except:
-#         pass
-    # start()
+while True:
+    # try:
+    #     danshua()
+    # except:
+    #     pass
+    danshua()

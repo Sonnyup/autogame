@@ -9,9 +9,12 @@ class configs():
         self.cf.read(self.path)
 
     #获取配置字典
-    def getConfigDict(self,sectionName):   
+    def getConfigDictInt(self,sectionName):
+        configs = {} 
         clist = self.cf.items(sectionName)
-        return dict(clist)
+        for c in clist:
+            configs[c[0]] = int(c[1])
+        return configs
 
     #获取单个配置的值
     def getOneConfigValue(self,sk):        

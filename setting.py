@@ -17,7 +17,7 @@ fudanFlag = 'image/hun.bmp'#福蛋标识
 autoFlag = 'image/auto.bmp'#自动邀请勾选框-御魂觉醒
 autoConfirm = 'image/autook.bmp'#默认邀请-确认按钮
 autoAcceptBtn = 'image/zdjs.bmp' #组队邀请-自动接受
-inviteMsg = 'image/dui.bmp' #邀请提示
+inviteMsg = 'image/yqtip.bmp' #邀请提示
 tsBtn = 'image/tsbtn.bmp' #探索
 tsFlag = 'image/tsflag.bmp' #探索
 fxFlag = 'image/faxian.bmp' #发现妖怪
@@ -58,12 +58,34 @@ lipinFlag = 'image/lipin.bmp' #小纸人礼盒
 towSixFlag = 'image/26.bmp'
 yaoFlag = 'image/yao.bmp'
 fbjmFlag = 'image/fbjm.bmp'
+
+#########妖气##########
+zuduiBtn = 'image/yaoqi/zudui.bmp'
+yqfyBtn = 'image/yaoqi/yqfy.bmp' #妖气封印按钮
+yqfyTip = 'image/yaoqi/yqfy2.bmp'
+rhfBtn = 'image/yaoqi/rhf.bmp' #日和坊
+yqfyrhfTip = 'image/yaoqi/yqfyrhf.bmp'
+xswBtn = 'image/yaoqi/xsw.bmp' #小松丸
+yqfyxswTip = 'image/yaoqi/yqfyxsw.bmp'
+zdppBtn= 'image/yaoqi/zdpp.bmp' #自动匹配
+chaBtn= 'image/yaoqi/cha.bmp' #拒绝协作
+jrBtn = 'image/yaoqi/jr.bmp' #加入
+sxBtn = 'image/yaoqi/sx.bmp' #刷新
+
+yaoqiName = '日和坊'
+if yaoqiName == '日和坊':
+    yqBtnImg = rhfBtn
+    yqTipImg = yqfyrhfTip
+elif yaoqiName == '小松丸':
+    yqBtnImg = xswBtn
+    yqTipImg = yqfyxswTip
+
 #参数设置
-peopleNum = 3 #御魂觉醒 参战人数
+peopleNum = 2 #御魂觉醒 参战人数
 
 fileMd5 = md5.get_file_md5() #生成配置文件MD5
 conf = configs() #读取配置类
-publicConf = conf.getConfigDict('publicuse')#公用配置参数
-yhConf = conf.getConfigDict('yuhun') #御魂配置参数
-jxConf = conf.getConfigDict('juexing')#觉醒参数
-tsConf = conf.getConfigDict('tansuo')#探索参数
+publicConf = conf.getConfigDictInt('publicuse')#公用配置参数
+yhConf = conf.getConfigDictInt('yuhun') #御魂配置参数
+jxConf = conf.getConfigDictInt('juexing')#觉醒参数
+tsConf = conf.getConfigDictInt('tansuo')#探索参数

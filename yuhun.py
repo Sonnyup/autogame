@@ -6,7 +6,7 @@ win = 0
 fair = 0
 #队长
 def duizhang():
-    fScreenShot(0.7) #截图
+    fScreenShot(0.5) #截图
     _publicFun()#调用共用函数
     teamPos = fLocate(teamFlag)#组队界面标识
     if teamPos:
@@ -14,11 +14,11 @@ def duizhang():
         # print(peopleNum)
         fightPos = fLocate(fightBtn)#开始战斗按钮
         invitePos = fLocateAll(inviteBtn) #邀请按钮--查找全部
-        if peopleNum == 2:  #2人开队
+        if yhConf['number'] == 2:  #2人开队
             if len(invitePos) == 1:
                 fLeftClick(fightPos,(13,8))
                 print("2人开始战斗")
-        elif peopleNum == 3:
+        elif yhConf['number'] == 3:
             if invitePos == None:
                 fLeftClick(fightPos,(13,8))
                 print("3人开始战斗")
